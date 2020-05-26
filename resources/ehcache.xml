@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+    <diskStore path="java.io.tmpdir/Tmp_EhCache"/>
+    <defaultCache eternal="false" maxElementsInMemory="1000" overflowToDisk="false" diskPersistent="false"
+                  timeToIdleSeconds="0" timeToLiveSeconds="600" memoryStoreEvictionPolicy="LRU"/>
+
+    <cache name="random"
+           eternal="false"
+           maxElementsInMemory="100"
+           overflowToDisk="false"
+           diskPersistent="false"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="10"
+           memoryStoreEvictionPolicy="LRU"/>
+</ehcache>
+<!--eternal 对象是否永久有效，一但设置了，timeout将不起作用。 -->
+<!--maxElementsInMemory 缓存的最大数目-->
+<!--overflowToDisk 内存不足时,是否启用磁盘缓存,如果为true则表示启动磁盘来存储，如果为false则表示不启动磁盘-->
+<!--timeToIdleSeconds 当缓存的内容闲置多少时间销毁,设置对象在失效前的允许闲置时间（单位：秒）。仅当eternal=false对象不是永久有效时使用，可选属性，默认值是0，也就是可闲置时间无穷大。-->
+<!--timeToLiveSeconds 当缓存存活多少时间销毁（单位是秒，如果我们想设置2分钟的缓存存活时间，那么这个值我们需要设置120）-->
+<!--memoryStoreEvictionPolicy 自动销毁策略-->
